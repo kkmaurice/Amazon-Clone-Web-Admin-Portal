@@ -6,11 +6,11 @@ import '../homeScreen/home_screen.dart';
 
 class NavAppBar extends StatefulWidget with PreferredSizeWidget {
   PreferredSizeWidget? preferredSizeWidget;
-  String? sellerUID;
+  String title;
 
   NavAppBar({
     this.preferredSizeWidget,
-    this.sellerUID,
+    required this.title,
   });
 
   @override
@@ -46,9 +46,9 @@ class _AppBarWithCartBadgeState extends State<NavAppBar> {
           Navigator.push(context,
               MaterialPageRoute(builder: (context) => const HomeScreen()));
         },
-        child: const Text(
-          "iShop",
-          style: TextStyle(
+        child: Text(
+          widget.title,
+          style: const TextStyle(
               fontSize: 26, letterSpacing: 4, fontWeight: FontWeight.bold),
         ),
       ),

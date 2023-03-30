@@ -4,6 +4,8 @@ import 'package:admin_web_portal/widgets/nav_appbar.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
+import '../users/verified_users_screen.dart';
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -45,7 +47,9 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.black,
-        appBar: NavAppBar(),
+        appBar: NavAppBar(
+          title: 'iShop',
+        ),
         body: SingleChildScrollView(
           child: Center(
               child: Column(
@@ -66,7 +70,13 @@ class _HomeScreenState extends State<HomeScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     GestureDetector(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      const VerifiedUsersScreen()));
+                        },
                         child: Image.asset(
                           'assets/images/verified_users.png',
                           width: 200,
