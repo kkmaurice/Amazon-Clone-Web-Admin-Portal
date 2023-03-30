@@ -1,3 +1,5 @@
+import 'package:admin_web_portal/authentication/login_screen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import '../homeScreen/home_screen.dart';
@@ -101,7 +103,13 @@ class _AppBarWithCartBadgeState extends State<NavAppBar> {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    FirebaseAuth.instance.signOut();
+                    Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const LoginScreen()));
+                  },
                   child: const Text(
                     "Logout",
                     style: TextStyle(color: Colors.white),

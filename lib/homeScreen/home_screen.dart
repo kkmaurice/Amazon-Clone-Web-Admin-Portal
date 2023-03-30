@@ -44,53 +44,68 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
-      appBar: NavAppBar(),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(12.0),
-              child: Text(
-                '$liveTime\n\n$liveDate',
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
+        backgroundColor: Colors.black,
+        appBar: NavAppBar(),
+        body: SingleChildScrollView(
+          child: Center(
+              child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: Text(
+                    '$liveTime\n\n$liveDate',
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                 ),
-              ),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                 GestureDetector(
-                  onTap: (){},
-                  child: Image.asset('assets/images/verified_users.png',width: 200,)),
-              
-            const SizedBox(width: 200,),
-            GestureDetector(
-                  onTap: (){},
-                  child: Image.asset('assets/images/blocked_users.png',width: 200,)),
-                  
-          ],
-        ),
-        const SizedBox(height: 20,),
-        Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                 GestureDetector(
-                  onTap: (){},
-                  child: Image.asset('assets/images/verified_seller.png',width: 200,)),
-              
-            const SizedBox(width: 200,),
-            GestureDetector(
-                  onTap: (){},
-                  child: Image.asset('assets/images/blocked_seller.png',width: 200,)),
-                  
-          ],
-        ),
-      ]))
-    );
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    GestureDetector(
+                        onTap: () {},
+                        child: Image.asset(
+                          'assets/images/verified_users.png',
+                          width: 200,
+                        )),
+                    const SizedBox(
+                      width: 200,
+                    ),
+                    GestureDetector(
+                        onTap: () {},
+                        child: Image.asset(
+                          'assets/images/blocked_users.png',
+                          width: 200,
+                        )),
+                  ],
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    GestureDetector(
+                        onTap: () {},
+                        child: Image.asset(
+                          'assets/images/verified_seller.png',
+                          width: 200,
+                        )),
+                    const SizedBox(
+                      width: 200,
+                    ),
+                    GestureDetector(
+                        onTap: () {},
+                        child: Image.asset(
+                          'assets/images/blocked_seller.png',
+                          width: 200,
+                        )),
+                  ],
+                ),
+              ])),
+        ));
   }
 }
