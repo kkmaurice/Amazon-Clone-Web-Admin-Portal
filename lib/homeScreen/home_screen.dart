@@ -4,6 +4,7 @@ import 'package:admin_web_portal/widgets/nav_appbar.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
+import '../users/blocked_users_screen.dart';
 import '../users/verified_users_screen.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -85,7 +86,13 @@ class _HomeScreenState extends State<HomeScreen> {
                       width: 200,
                     ),
                     GestureDetector(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      const BlockedUsersScreen()));
+                        },
                         child: Image.asset(
                           'assets/images/blocked_users.png',
                           width: 200,
