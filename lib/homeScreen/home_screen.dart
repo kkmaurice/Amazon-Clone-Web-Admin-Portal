@@ -4,6 +4,8 @@ import 'package:admin_web_portal/widgets/nav_appbar.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
+import '../sellers/blocked_sellers_screen.dart';
+import '../sellers/verified_sellers_screen.dart';
 import '../users/blocked_users_screen.dart';
 import '../users/verified_users_screen.dart';
 
@@ -106,7 +108,13 @@ class _HomeScreenState extends State<HomeScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     GestureDetector(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      const VerifiedSellersScreen()));
+                        },
                         child: Image.asset(
                           'assets/images/verified_seller.png',
                           width: 200,
@@ -115,7 +123,13 @@ class _HomeScreenState extends State<HomeScreen> {
                       width: 200,
                     ),
                     GestureDetector(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      const BlockedSellersScreen()));
+                        },
                         child: Image.asset(
                           'assets/images/blocked_seller.png',
                           width: 200,

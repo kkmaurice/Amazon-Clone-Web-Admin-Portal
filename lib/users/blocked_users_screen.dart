@@ -76,7 +76,7 @@ class _VerifiedUsersScreenState extends State<BlockedUsersScreen> {
         return const Center(
           child: Text(
             'No records found',
-            style: TextStyle(fontSize: 30, color: Colors.white),
+            style: TextStyle(fontSize: 30, color: Colors.black),
           ),
         );
       } else {
